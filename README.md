@@ -1,2 +1,4 @@
 # my_vimrc
-vim etc and plugin
+vim 的配置文件
+
+安装包太大无法上传，可以使用插件安装命令自行安装
