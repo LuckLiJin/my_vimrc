@@ -28,6 +28,34 @@ autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `
 
 "}
 
+"{
+"python代码缩进
+au BufNewFile,BufRead *.py
+\set tabstop=4
+\set softtabstop=4
+\set shiftwidth=4
+\set textwidth=79
+\set expandtab
+\set autoindent
+\set fileformat=unix
+"}
+"{窗口快捷键映射
+"split navigations
+nnoremap \<C-J\> \<C-W\>\<C-J\>
+nnoremap \<C-K\> \<C-W\>\<C-K\>
+nnoremap \<C-L\> \<C-W\>\<C-L\>
+nnoremap \<C-H\> \<C-W\>\<C-H\>
+"}
+"{支持python虚拟环境
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+"}
 
 "{
     set nocompatible " be iMproved
@@ -64,6 +92,9 @@ autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `
     Bundle 'ctrlp.vim'
     Bundle 'unite.vim'
     Bundle 'ack.vim'
+    Bundle 'vim-scripts/indentpython.vim'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'nvie/vim-flake8'
     "Bundle 'Lokaltog/vim-powerline'
     "Bundle 'Color-Sampler-Pack'
     "Bundle 'tpope/vim-fugitive'
@@ -215,6 +246,10 @@ nnoremap <leader>r gT
 "{Lokaltog/vim-powerline
 set laststatus=2
 let g:Powerline_symbols='unicode'
+"}
+"{python语法高亮
+let python_highlight_all=1
+syntax on
 "}
 "{unite
 nnoremap <leader>f :Unite file<cr>
