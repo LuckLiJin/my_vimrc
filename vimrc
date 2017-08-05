@@ -27,7 +27,7 @@ set number
 autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
 
 "}
-
+set clipboard=unnamed
 "{
 "python代码缩进
 au BufNewFile,BufRead *.py
@@ -41,10 +41,10 @@ au BufNewFile,BufRead *.py
 "}
 "{窗口快捷键映射
 "split navigations
-nnoremap \<C-J\> \<C-W\>\<C-J\>
-nnoremap \<C-K\> \<C-W\>\<C-K\>
-nnoremap \<C-L\> \<C-W\>\<C-L\>
-nnoremap \<C-H\> \<C-W\>\<C-H\>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 "}
 "{支持python虚拟环境
 py << EOF
