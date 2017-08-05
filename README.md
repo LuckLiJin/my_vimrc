@@ -3,6 +3,14 @@ vim 的配置文件
 
 安装包太大无法上传，可以使用插件安装命令自行安装
 
+## 安装环境检查
+
+1. vim --version | grep python  
+    如果看到 -python ， 则说明需要安装py2的支持包  
+2. 安装py2支持包  
+    http://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=-py2&searchon=names  
+    以 nox 为例，在终端输入 sudo apt-get install vim-nox-py2   
+
 ## 快捷键简单说明
 
 ','为leader键
