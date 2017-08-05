@@ -62,7 +62,7 @@ EOF
 
     filetype off " required! /** 从这行开始，vimrc配置 **/
 
-    set rtp+=/root/.vim/bundle/vundle/
+    set rtp+=~/.vim/bundle/vundle/
 
     call vundle#rc()
 
@@ -150,7 +150,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete  
    
       
-let g:pydiction_location='/root/.vim/complete-dict'  
+let g:pydiction_location='~/.vim/complete-dict'  
 
 
 "{jedi bundle
@@ -172,7 +172,7 @@ let g:pydiction_location='/root/.vim/complete-dict'
 
 "}
 "{YouCompleteMe
-    let g:ycm_global_ycm_extra_conf = '/root/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/tests/clang/testdata/client_data/'  "配置默认的ycm_extra_conf.py
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/tests/clang/testdata/client_data/'  "配置默认的ycm_extra_conf.py
     let g:ycm_error_symbol = '>>'
     let g:ycm_warning_symbol = '>*'
     nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
